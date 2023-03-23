@@ -14,6 +14,7 @@
   */
 
   /* WISHLISH :D */
+  button {}
   h1 {}
   h2 {}
   h3 {}
@@ -24,4 +25,33 @@
 
 @layer components {
   /* For common components */
+  .bottom-bar {
+    @apply fixed bottom-0 w-screen h-[10vh] bg-red-900 shadow-md flex flex-row justify-center items-center text-white shadow-[0px_-2px_5px_rgba(0,0,0,0.3)] space-x-4;
+    
+    @apply dark:bg-slate-800;
+  }
+  .bottom-tooltip {
+    pointer-events: none;
+
+    @apply absolute top-[-2.5rem] sm:top-[-5rem] left-2 opacity-0 group-hover:opacity-100 group-hover:text-red-900 w-max text-3xl sm:text-7xl uppercase font-bold transition-all duration-200;
+
+    @apply dark:group-hover:text-slate-400;
+  }
+  .icon-btn {
+    @apply hover:bg-red-200 hover:bg-opacity-60 hover:rounded-lg hover:text-red-900 active:bg-red-100 active:bg-opacity-100 active:text-red-300 rounded-3xl p-3 transition-all duration-200;
+
+    @apply dark:hover:bg-slate-200 hover:bg-opacity-60 hover:rounded-lg hover:text-slate-900 active:bg-slate-100 active:bg-opacity-100 active:text-slate-300 rounded-3xl p-3 transition-all duration-200;
+  }
+
+  .btn {
+    @apply text-sm rounded-md bg-red-800 px-2.5 py-1.5 text-white uppercase transition-all hover:bg-red-700 active:bg-red-900 tracking-widest font-semibold border-solid border-2 border-red-800;
+  }
+  .btn-outline {
+    @apply text-sm rounded-md bg-opacity-0 px-2.5 py-1.5 text-red-800 border-2 border-red-800 uppercase transition-all hover:bg-red-100 hover:bg-opacity-50 hover:border-red-900
+    active:opacity-100 active:bg-red-900 active:border-red-900  active:text-white tracking-widest font-semibold;
+  }
+
+  .card {
+    @apply text-red-900 flex-col content-center align-middle p-5 m-2 absolute rounded-2xl bg-slate-50 shadow-lg shadow-[rgba(0,0,0,.3)];
+  }
 }
